@@ -17,25 +17,25 @@ import Image from "next/image";
 import { gsap } from "gsap";
 
 export default function Footer() {
-  useEffect(() => {
-    // Animate footer elements on scroll
-    gsap.fromTo(
-      ".footer-animate",
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: ".footer-container",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  }, []);
+  // useEffect(() => {
+  //   // Animate footer elements on scroll
+  //   gsap.fromTo(
+  //     ".footer-animate",
+  //     { opacity: 0, y: 30 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       duration: 0.8,
+  //       stagger: 0.1,
+  //       scrollTrigger: {
+  //         trigger: ".footer-container",
+  //         start: "top 80%",
+  //         end: "bottom 20%",
+  //         toggleActions: "play none none reverse",
+  //       },
+  //     }
+  //   );
+  // }, []);
 
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
