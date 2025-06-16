@@ -14,11 +14,11 @@ export default function Navigation() {
 
   useEffect(() => {
     // Initial animation
-    gsap.fromTo(
-      ".nav-item",
-      { opacity: 0, y: -20 },
-      { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.2 }
-    );
+    // gsap.fromTo(
+    //   ".nav-item",
+    //   { opacity: 0, y: -20 },
+    //   { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, delay: 0.2 }
+    // );
 
     // Scroll effect
     const handleScroll = () => {
