@@ -43,6 +43,7 @@ export default function Navigation() {
       ],
     },
     { href: "/books", label: "Books" },
+    { href: "/posts", label: "Blog" },
     { href: "/contact", label: "Contact" },
   ];
 
