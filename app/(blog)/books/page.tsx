@@ -170,7 +170,7 @@ export default function Books() {
       <div
         className="py-20 bg-gray-50 relative bg-fixed bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9)), url('/placeholder.svg?height=800&width=1920')`,
+          backgroundImage: `linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9))`,
         }}
       >
         <AnimatedSection className="relative z-10">
@@ -213,7 +213,7 @@ export default function Books() {
       <div
         className="py-20 relative bg-fixed bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('/placeholder.svg?height=900&width=1920')`,
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95))`,
         }}
       >
         <AnimatedSection className="relative z-10">
@@ -273,7 +273,7 @@ export default function Books() {
       <div
         className="py-20 bg-gradient-to-r from-navy to-charcoal text-white relative bg-fixed bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(26, 32, 56, 0.8), rgba(45, 55, 72, 0.8)), url('/placeholder.svg?height=600&width=1920')`,
+          backgroundImage: `linear-gradient(rgba(26, 32, 56, 0.8), rgba(45, 55, 72, 0.8))`,
         }}
       >
         <AnimatedSection className="relative z-10">
