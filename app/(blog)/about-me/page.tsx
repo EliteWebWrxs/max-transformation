@@ -9,7 +9,12 @@ export default function About() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative py-32 lg:py-40 bg-gradient-to-br from-white via-gray-50 to-sand/20 overflow-hidden">
+      <section
+        className="relative py-32 lg:py-40 bg-gradient-to-br from-white via-gray-50 to-sand/20 overflow-hidden bg-fixed bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(249, 250, 251, 0.85))`,
+        }}
+      >
         {/* Decorative Elements */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-20 right-20 w-72 h-72 bg-teal/10 rounded-full blur-3xl"></div>
@@ -61,10 +66,7 @@ export default function About() {
                   confidence
                 </p>
                 <p className="flex items-start">
-                  <CheckCircle
-                    className="text-teal mt-1 mr-4 flex-shrink-0"
-                    size={20}
-                  />
+                  <CheckCircle className="text-teal mt-1 mr-4 flex-shrink-0" />
                   Transformed my inner critic into my biggest cheerleader
                 </p>
                 <p className="flex items-start">
@@ -113,98 +115,121 @@ export default function About() {
       </section>
 
       {/* My Story */}
-      <AnimatedSection className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-8 text-center">
-            My Story
-          </h2>
-          <div className="prose prose-lg max-w-none text-gray-700">
-            <p className="text-xl mb-6">
-              I'm Diane Adams — CEO of <strong>Max Transformation LLC</strong>,
-              creator of the <strong>Rewire & Rebuild Method</strong>, and a
-              woman on a mission to help others rise from life's toughest
-              setbacks.
-            </p>
-            <p className="text-xl mb-6">
-              With 16 years of honourable service as a{" "}
-              <strong>Disabled Army Veteran</strong>, I've experienced
-              challenge, discipline, and deep transformation. My path didn't
-              stop there — I've since become a{" "}
-              <strong>
-                motivational speaker, certified life coach, four-time
-                best-selling author
-              </strong>
-              , and a strong advocate for personal empowerment and resilience.
-            </p>
-            <p className="text-xl mb-6">
-              I also wear many hats professionally: I'm a trusted{" "}
-              <strong>mobile and remote notary</strong>, an experienced{" "}
-              <strong>loan signing agent</strong>, and a{" "}
-              <strong>licensed life insurance agent</strong> dedicated to
-              helping families access affordable protection.
-            </p>
-            <p className="text-xl mb-6">
-              But at the core of it all, I believe in the power of{" "}
-              <strong>positive self-talk</strong>, structure, and support. I
-              coach with purpose — helping women, teens, and overthinkers
-              reframe their mindsets, rebuild their confidence, and reclaim
-              control of their lives. My work is rooted in lived experience and
-              a passion for guiding others through their own transformation.
-            </p>
-            <p className="text-xl mb-6">
-              If you're ready to rewrite your story—with clarity, courage, and
-              compassion, I'm here to walk that road with you.
-            </p>
+      <div
+        className="py-20 relative bg-fixed bg-cover bg-top bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('/diane-adams-3.jpg?height=800&width=800')`,
+        }}
+      >
+        <AnimatedSection className="relative z-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-8 text-center">
+              My Story
+            </h2>
+
+            <div className="prose prose-lg max-w-none text-gray-700">
+              <p className="text-xl mb-6">
+                I'm Diane Adams - CEO of <strong>Max Transformation LLC</strong>
+                , creator of the <strong>Rewire & Rebuild Method</strong>, and a
+                woman on a mission to help others rise from life's toughest
+                setbacks.
+              </p>
+
+              <p className="text-xl mb-6">
+                With 16 years of honourable service as a{" "}
+                <strong>Disabled Army Veteran</strong>, I've experienced
+                challenge, discipline, and deep transformation. My path didn't
+                stop there - I've since become a{" "}
+                <strong>
+                  motivational speaker, certified life coach, four-time
+                  best-selling author
+                </strong>
+                , and a strong advocate for personal empowerment and resilience.
+              </p>
+
+              <p className="text-xl mb-6">
+                I also wear many hats professionally: I'm a trusted{" "}
+                <strong>mobile and remote notary</strong>, an experienced{" "}
+                <strong>loan signing agent</strong>, and a{" "}
+                <strong>licensed life insurance agent</strong> dedicated to
+                helping families access affordable protection.
+              </p>
+
+              <p className="text-xl mb-6">
+                But at the core of it all, I believe in the power of{" "}
+                <strong>positive self-talk</strong>, structure, and support. I
+                coach with purpose helping women, teens, and overthinkers
+                reframe their mindsets, rebuild their confidence, and reclaim
+                control of their lives. My work is rooted in lived experience
+                and a passion for guiding others through their own
+                transformation.
+              </p>
+
+              <p className="text-xl mb-6">
+                If you're ready to rewrite your story with clarity, courage, and
+                compassion, I'm here to walk that road with you.
+              </p>
+            </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </div>
 
       {/* Values */}
-      <AnimatedSection className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-16 text-center">
-            What I Believe
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart size={32} />
+      <div
+        className="py-20 bg-gray-50 relative bg-fixed bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(249, 250, 251, 0.95), rgba(249, 250, 251, 0.95))`,
+        }}
+      >
+        <AnimatedSection className="relative z-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-16 text-center">
+              What I Believe
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Heart size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-charcoal mb-4">
+                  Self-Compassion First
+                </h3>
+                <p className="text-gray-700">
+                  True transformation begins with treating yourself with the
+                  same kindness you'd show a dear friend.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-charcoal mb-4">
-                Self-Compassion First
-              </h3>
-              <p className="text-gray-700">
-                True transformation begins with treating yourself with the same
-                kindness you'd show a dear friend.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-gold text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target size={32} />
+
+              <div className="text-center">
+                <div className="bg-gold text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Target size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-charcoal mb-4">
+                  Progress Over Perfection
+                </h3>
+                <p className="text-gray-700">
+                  Small, consistent steps create lasting change. It's about
+                  progress, not perfection.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-charcoal mb-4">
-                Progress Over Perfection
-              </h3>
-              <p className="text-gray-700">
-                Small, consistent steps create lasting change. It's about
-                progress, not perfection.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="bg-navy text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users size={32} />
+
+              <div className="text-center">
+                <div className="bg-navy text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Users size={32} />
+                </div>
+                <h3 className="text-2xl font-bold text-charcoal mb-4">
+                  You're Not Alone
+                </h3>
+                <p className="text-gray-700">
+                  Everyone struggles with self-doubt. The key is learning tools
+                  to overcome it together.
+                </p>
               </div>
-              <h3 className="text-2xl font-bold text-charcoal mb-4">
-                You're Not Alone
-              </h3>
-              <p className="text-gray-700">
-                Everyone struggles with self-doubt. The key is learning tools to
-                overcome it together.
-              </p>
             </div>
           </div>
-        </div>
-      </AnimatedSection>
+        </AnimatedSection>
+      </div>
 
       {/* Credentials */}
       <AnimatedSection className="py-20">
@@ -212,6 +237,7 @@ export default function About() {
           <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-12 text-center">
             Credentials & Training
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-xl font-bold text-charcoal mb-4">
@@ -224,6 +250,7 @@ export default function About() {
                 <li>• Certification 4</li>
               </ul>
             </div>
+
             <div>
               <h3 className="text-xl font-bold text-charcoal mb-4">
                 Education
@@ -240,24 +267,31 @@ export default function About() {
       </AnimatedSection>
 
       {/* CTA */}
-      <AnimatedSection className="py-20 bg-gradient-to-r from-teal to-charcoal text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-xl mb-8 text-gray-200">
-            Let's work together to transform your inner voice and unlock your
-            potential.
-          </p>
-          <Link
-            href="/contact"
-            className="bg-sand text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-gold transition-all duration-300 inline-flex items-center"
-          >
-            Schedule Your Free Consultation
-            <ArrowRight className="ml-2" size={20} />
-          </Link>
-        </div>
-      </AnimatedSection>
+      <div
+        className="py-20 bg-gradient-to-r from-teal to-charcoal text-white relative bg-fixed bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `linear-gradient(rgba(20, 184, 166, 0.8), rgba(45, 55, 72, 0.8))`,
+        }}
+      >
+        <AnimatedSection className="relative z-10">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6">
+              Ready to Start Your Journey?
+            </h2>
+            <p className="text-xl mb-8 text-gray-200">
+              Let's work together to transform your inner voice and unlock your
+              potential.
+            </p>
+            <Link
+              href="/contact"
+              className="bg-sand text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-gold transition-all duration-300 inline-flex items-center"
+            >
+              Schedule Your Free Consultation
+              <ArrowRight className="ml-2" size={20} />
+            </Link>
+          </div>
+        </AnimatedSection>
+      </div>
     </div>
   );
 }
