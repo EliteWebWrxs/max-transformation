@@ -25,40 +25,60 @@ export default function Contact() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    // Hero animation
-    const tl = gsap.timeline();
-    tl.fromTo(
-      ".contact-hero-title",
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    )
-      .fromTo(
-        ".contact-hero-subtitle",
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-        "-=0.5"
-      )
-      .fromTo(
-        ".contact-hero-cards",
-        { opacity: 0, scale: 0.9 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.6,
-          ease: "back.out(1.7)",
-          stagger: 0.1,
-        },
-        "-=0.3"
-      );
-  }, []);
+  // useEffect(() => {
+  //   // Hero animation
+  //   const tl = gsap.timeline();
+  //   tl.fromTo(
+  //     ".contact-hero-title",
+  //     { opacity: 0, y: 50 },
+  //     { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+  //   )
+  //     .fromTo(
+  //       ".contact-hero-subtitle",
+  //       { opacity: 0, y: 30 },
+  //       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
+  //       "-=0.5"
+  //     )
+  //     .fromTo(
+  //       ".contact-hero-cards",
+  //       { opacity: 0, scale: 0.9 },
+  //       {
+  //         opacity: 1,
+  //         scale: 1,
+  //         duration: 0.6,
+  //         ease: "back.out(1.7)",
+  //         stagger: 0.1,
+  //       },
+  //       "-=0.3"
+  //     );
+  // }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
     setIsSubmitted(true);
+
+    // Simulate form submission
+    try {
+      const formDataToSubmit = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSubmit.append(key, value);
+      });
+
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: formDataToSubmit,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit the data. Please try again.");
+      }
+
+      setMessage("Thank you for contacting us. We'll respond within 24 hours.");
+    } catch (error) {
+      setMessage("Error sending message. Please try again");
+    }
 
     // Reset form after 3 seconds
     setTimeout(() => {
@@ -201,17 +221,14 @@ export default function Contact() {
                   <h3 className="text-2xl font-bold text-charcoal mb-4">
                     Message Sent!
                   </h3>
-                  <p className="text-gray-600 mb-6">
-                    Thank you for reaching out. I'll review your message and get
-                    back to you within 24 hours.
-                  </p>
-                  <div className="bg-teal/10 p-4 rounded-lg">
+                  <p className="text-gray-600 mb-6">{message}</p>
+                  {/* <div className="bg-teal/10 p-4 rounded-lg">
                     <p className="text-teal font-semibold">What's Next?</p>
                     <p className="text-gray-700 text-sm mt-2">
                       Check your email for a confirmation and some free
                       resources to get you started!
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -269,7 +286,7 @@ export default function Contact() {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-4 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-teal focus:border-transparent transition-all duration-200"
-                      placeholder="(555) 123-4567"
+                      placeholder="(614) 438-2532"
                     />
                   </div>
 
@@ -356,7 +373,7 @@ export default function Contact() {
                         Email Me
                       </h4>
                       <p className="text-gray-700 mb-1">
-                        hello@maxtransformationcoach.com
+                        diane@maxtransformationllc.com
                       </p>
                       <p className="text-sm text-gray-500">
                         Response within 24 hours
@@ -372,7 +389,7 @@ export default function Contact() {
                       <h4 className="font-semibold text-charcoal mb-1">
                         Call Me
                       </h4>
-                      <p className="text-gray-700 mb-1">(555) 123-4567</p>
+                      <p className="text-gray-700 mb-1">(614) 438-2532</p>
                       <p className="text-sm text-gray-500">
                         Available for consultation calls
                       </p>

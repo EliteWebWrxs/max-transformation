@@ -19,6 +19,10 @@ import { assistWithPresets } from "@/sanity/plugins/assist";
 import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import settings from "@/sanity/schemas/singletons/settings";
+import testimonial from "@/sanity/schemas/documents/testimonial";
+import freeResource from "@/sanity/schemas/documents/freeResource";
+import bookTestimonials from "@/sanity/schemas/documents/bookTestimonials";
+import book from "@/sanity/schemas/documents/book";
 import { resolveHref } from "@/sanity/lib/utils";
 
 const homeLocation = {
@@ -37,6 +41,10 @@ export default defineConfig({
       // Documents
       post,
       author,
+      testimonial,
+      freeResource,
+      bookTestimonials,
+      book,
     ],
   },
   plugins: [

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   Mail,
@@ -12,30 +12,29 @@ import {
   Twitter,
   Linkedin,
   Heart,
+  Send,
 } from "lucide-react";
 import Image from "next/image";
 import { gsap } from "gsap";
 
 export default function Footer() {
-  // useEffect(() => {
-  //   // Animate footer elements on scroll
-  //   gsap.fromTo(
-  //     ".footer-animate",
-  //     { opacity: 0, y: 30 },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       duration: 0.8,
-  //       stagger: 0.1,
-  //       scrollTrigger: {
-  //         trigger: ".footer-container",
-  //         start: "top 80%",
-  //         end: "bottom 20%",
-  //         toggleActions: "play none none reverse",
-  //       },
-  //     }
-  //   );
-  // }, []);
+  const [formData, setFormData] = useState({
+    email: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedMessage, setMessage] = useState("");
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const socialLinks = [
     { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
@@ -66,6 +65,43 @@ export default function Footer() {
     { href: "/contact", label: "Success Stories" },
   ];
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    try {
+      const formDataToSubmit = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSubmit.append(key, value);
+      });
+
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        body: formDataToSubmit,
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit the data. Please try again.");
+      }
+
+      setMessage("Thank you for subscribing!");
+    } catch (error) {
+      setMessage("Error subscribing. Please try again");
+    }
+
+    setIsSubmitting(false);
+    setSubmitted(true);
+
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        email: "",
+      });
+    }, 3000);
+  };
+
   return (
     <footer className="footer-container bg-gradient-to-br from-charcoal via-navy to-charcoal text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -89,15 +125,39 @@ export default function Footer() {
                 lives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-full text-charcoal placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal"
-                />
-                <button className="bg-gradient-to-r from-teal to-charcoal px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                  Subscribe
-                  <ArrowRight className="ml-2" size={20} />
-                </button>
+                {submitted ? (
+                  <div className="text-center py-12">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Send className="h-8 w-8 text-green-600" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      Message Sent!
+                    </h3>
+                    <p className="text-white">{submittedMessage}</p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit}>
+                    <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        className="flex-1 px-6 py-4 rounded-full text-charcoal placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                      />
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="bg-gradient-to-r from-teal to-charcoal px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                      >
+                        {isSubmitting ? "Subscribing..." : "Subscribe"}
+                        <ArrowRight className="ml-2" size={20} />
+                      </button>
+                    </div>
+                  </form>
+                )}
               </div>
               <p className="text-sm text-gray-400 mt-4">
                 No spam. Unsubscribe anytime.
@@ -133,15 +193,15 @@ export default function Footer() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center text-gray-300">
                   <Mail size={20} className="mr-4 text-teal" />
-                  <span>hello@maxtransformationcoach.com</span>
+                  <span>diane@maxtransformationllc.com</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Phone size={20} className="mr-4 text-teal" />
-                  <span>(555) 123-4567</span>
+                  <span>(614) 438-2532</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <MapPin size={20} className="mr-4 text-teal" />
-                  <span>San Francisco, CA</span>
+                  <span>Riverview, FL</span>
                 </div>
               </div>
 

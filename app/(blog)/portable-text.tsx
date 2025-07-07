@@ -29,6 +29,7 @@ export default function CustomPortableText({
       h6: ({ children }) => (
         <h6 className="mb-1 text-xs font-semibold">{children}</h6>
       ),
+      normal: ({ children }) => <p className="mb-3 ">{children}</p>,
     },
     marks: {
       link: ({ children, value }) => {
