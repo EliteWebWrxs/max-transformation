@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { gsap } from "gsap";
 import AnimatedSection from "@/components/AnimatedSection";
+import Link from "next/link";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -111,6 +112,7 @@ export default function Contact() {
       description: "30-minute consultation to discuss your goals",
       action: "Schedule Now",
       highlight: true,
+      actionLink: "https://calendly.com/diane-maxtransformationllc/30min",
     },
     {
       icon: Mail,
@@ -118,6 +120,8 @@ export default function Contact() {
       description: "Get a response within 24 hours",
       action: "Email Me",
       highlight: false,
+      type: "email",
+      actionLink: "diane@maxtransformationllc.com",
     },
     {
       icon: Phone,
@@ -125,6 +129,8 @@ export default function Contact() {
       description: "Available during business hours",
       action: "Call Now",
       highlight: false,
+      type: "phone",
+      actionLink: "6144382532",
     },
   ];
 
@@ -182,15 +188,22 @@ export default function Contact() {
                   </div>
                   <h3 className="text-2xl font-bold mb-4">{method.title}</h3>
                   <p className="text-gray-200 mb-6">{method.description}</p>
-                  <button
+                  <Link
                     className={`w-full py-3 px-6 rounded-full font-semibold transition-all duration-300 ${
                       method.highlight
                         ? "bg-sand text-charcoal hover:bg-gold"
                         : "bg-white/20 text-white hover:bg-white/30"
                     }`}
+                    href={
+                      method.type === "phone"
+                        ? `tel:${method.actionLink}`
+                        : method.type === "email"
+                          ? `mailto:${method.actionLink}`
+                          : method.actionLink
+                    }
                   >
                     {method.action}
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -454,9 +467,12 @@ export default function Contact() {
                     Discover which program fits you best
                   </div>
                 </div>
-                <button className="bg-sand text-charcoal px-8 py-4 rounded-full font-bold hover:bg-gold transition-all duration-300">
+                <Link
+                  href="https://calendly.com/diane-maxtransformationllc/30min"
+                  className="bg-sand text-charcoal px-8 py-4 rounded-full font-bold hover:bg-gold transition-all duration-300"
+                >
                   Book Your Free Call Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -474,13 +490,13 @@ export default function Contact() {
             transformation is just one conversation away.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="bg-gradient-to-r from-teal to-charcoal text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
+            <Link
+              href="https://calendly.com/diane-maxtransformationllc/30min"
+              className="bg-gradient-to-r from-teal to-charcoal text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+            >
               Book Free Consultation
               <Calendar className="ml-3" size={24} />
-            </button>
-            <button className="border-2 border-charcoal text-charcoal px-10 py-5 rounded-full font-bold text-lg hover:bg-charcoal hover:text-white transition-all duration-300">
-              Send a Message
-            </button>
+            </Link>
           </div>
         </div>
       </AnimatedSection>

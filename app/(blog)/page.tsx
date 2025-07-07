@@ -340,7 +340,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="https://calendly.com/diane-maxtransformationllc/30min"
                 className="bg-sand text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-gold transition-all duration-300 flex items-center justify-center"
               >
                 Book Your Free Consultation

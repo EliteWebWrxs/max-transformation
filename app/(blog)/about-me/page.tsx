@@ -283,7 +283,7 @@ export default function About() {
               potential.
             </p>
             <Link
-              href="/contact"
+              href="https://calendly.com/diane-maxtransformationllc/30min"
               className="bg-sand text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-gold transition-all duration-300 inline-flex items-center"
             >
               Schedule Your Free Consultation

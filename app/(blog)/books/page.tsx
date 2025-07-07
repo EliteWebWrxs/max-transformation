@@ -287,17 +287,11 @@ export default function Books() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="https://amazon.com"
                 className="bg-sand text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-gold transition-all duration-300 flex items-center justify-center"
               >
                 Order Your Books
                 <ArrowRight className="ml-2" size={20} />
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-charcoal transition-all duration-300"
-              >
-                Get Free Resources
               </Link>
             </div>
           </div>
