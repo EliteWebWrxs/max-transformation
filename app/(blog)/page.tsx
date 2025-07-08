@@ -1,34 +1,8 @@
-"use client";
-
-// import { useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, Star, CheckCircle } from "lucide-react";
-// import { gsap } from "gsap";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export default function Home() {
-  // useEffect(() => {
-  //   // Hero animation
-  //   const tl = gsap.timeline();
-  //   tl.fromTo(
-  //     ".hero-title",
-  //     { opacity: 0, y: 50 },
-  //     { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-  //   )
-  //     .fromTo(
-  //       ".hero-subtitle",
-  //       { opacity: 0, y: 30 },
-  //       { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
-  //       "-=0.5"
-  //     )
-  //     .fromTo(
-  //       ".hero-cta",
-  //       { opacity: 0, scale: 0.9 },
-  //       { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.7)" },
-  //       "-=0.3"
-  //     );
-  // }, []);
-
   return (
     <div className="pt-16">
       {/* Hero Section */}
