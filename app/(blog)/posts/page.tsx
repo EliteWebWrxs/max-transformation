@@ -11,15 +11,17 @@ import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "Blog | Max Transformation",
-  description: "",
+  description:
+    "Explore empowering articles on mindset, confidence, self-love, and transformation. Get practical tools, insights, and inspiration for your growth journey.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.maxtransformationllc.com//posts",
+    url: "https://www.maxtransformationllc.com/posts",
     title: "Blog | Max Transformation",
-    description: "",
+    description:
+      "Explore empowering articles on mindset, confidence, self-love, and transformation. Get practical tools, insights, and inspiration for your growth journey.",
     siteName: "Max Transformation",
-    images: ["https://www.maxtransformationllc.com//dianeLogo.webp"],
+    images: ["https://www.maxtransformationllc.com/dianeLogo.webp"],
   },
 };
 
