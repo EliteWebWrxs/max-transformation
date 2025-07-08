@@ -11,17 +11,15 @@ import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 
 export const metadata: Metadata = {
   title: "Blog | Max Transformation",
-  description:
-    "Learn what CPR is, how it works, and why it's a vital life-saving skill that everyone should know to respond confidently in emergencies.",
+  description: "",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://www.mylifeskills.org/posts",
-    title: "Blog | Life Skills Training Network",
-    description:
-      "Learn what CPR is, how it works, and why it's a vital life-saving skill that everyone should know to respond confidently in emergencies.",
-    siteName: "Life Skills Training Network",
-    images: ["https://lifeskills.vercel.app/lifeSkillsLogo.webp"],
+    url: "https://www.maxtransformationllc.com//posts",
+    title: "Blog | Max Transformation",
+    description: "",
+    siteName: "Max Transformation",
+    images: ["https://www.maxtransformationllc.com//dianeLogo.webp"],
   },
 };
 

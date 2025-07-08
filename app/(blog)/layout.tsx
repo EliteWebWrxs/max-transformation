@@ -1,4 +1,5 @@
 import type React from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
@@ -8,9 +9,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Transform Your Mindset - Positive Self-Talk Coaching",
+  title: "Transform Your Mindset | Max Transformation",
   description:
-    "Professional coaching to rebuild confidence and transform your inner dialogue. Discover programs and resources to unlock your potential.",
+    "Professional coaching to Amplify Your Confidence and transform your inner dialogue. Silence Your Inner Critic to unlock your potential.",
 };
 
 export default function RootLayout({
@@ -25,6 +26,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-HLRXWHN430" />
     </html>
   );
 }
