@@ -106,9 +106,10 @@ export default function ProgramsClient() {
                       <span className="text-4xl font-bold text-charcoal">
                         {program.price}
                       </span>
-                      {program.title !== "1-on-1 VIP Coaching" && (
-                        <span className="text-gray-600">/program</span>
-                      )}
+                      {program.title !== "1-on-1 VIP Coaching" &&
+                        program.title !== "Clarity Call" && (
+                          <span className="text-gray-600">/program</span>
+                        )}
                     </div>
 
                     <div className="flex items-center text-sm text-gray-600 mb-2">
