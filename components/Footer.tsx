@@ -317,7 +317,7 @@ export default function Footer() {
                 <span>for transformation.</span>
               </div>
 
-              <div className="flex items-center space-x-6 text-sm">
+              {/* <div className="flex items-center space-x-6 text-sm">
                 <Link
                   href="/privacy"
                   className="text-gray-400 hover:text-white transition-colors"
@@ -336,7 +336,7 @@ export default function Footer() {
                 >
                   Cookie Policy
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

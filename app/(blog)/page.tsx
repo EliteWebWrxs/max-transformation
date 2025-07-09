@@ -55,15 +55,7 @@ export default function Home() {
               <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-teal rounded-full mr-2"></div>
-                  Free 30-min call
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-gold rounded-full mr-2"></div>
-                  No pressure
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 bg-sand rounded-full mr-2"></div>
-                  Instant clarity
+                  Free 60-min call
                 </div>
               </div>
             </div>
@@ -109,7 +101,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-6">
-                Your Inner Critic is Holding You Back
+                Your Inner Dialogue is Holding You Back
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 That voice in your head telling you you're not good enough? It's
@@ -129,7 +121,7 @@ export default function Home() {
                     "Fear of failure preventing you from taking action",
                     "Comparing yourself to others constantly",
                     "Feeling stuck in limiting beliefs",
-                    "Low confidence in personal and professional settings",
+                    "Suffering in silence",
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <div className="w-2 h-2 bg-gold rounded-full mt-3 mr-4 flex-shrink-0"></div>
@@ -188,13 +180,13 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Confidence Builder",
+                  title: "Clarity Call",
                   description:
-                    "4-week program to build unshakeable self-confidence",
-                  price: "$297",
+                    "Build unshakeable self-confidence in a free initial call",
+                  price: "Free",
                 },
                 {
-                  title: "Mindset Mastery",
+                  title: "Renew and Rebuild",
                   description:
                     "8-week deep dive into transforming your mindset",
                   price: "$597",
@@ -203,7 +195,7 @@ export default function Home() {
                   title: "1-on-1 Coaching",
                   description:
                     "Personalized coaching tailored to your specific needs",
-                  price: "$197/session",
+                  price: "$297/session",
                 },
               ].map((program, index) => (
                 <div

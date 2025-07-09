@@ -7,15 +7,20 @@ import AnimatedSection from "@/components/AnimatedSection";
 export default function ProgramsClient() {
   const programs = [
     {
-      title: "Confidence Builder",
-      subtitle: "4-Week Foundation Program",
-      price: "$297",
-      duration: "4 weeks",
-      format: "Self-paced online",
-      description:
-        "Perfect for beginners ready to build unshakeable self-confidence from the ground up.",
-      features: ["feature 1", "feature 2", "feature 3", "feature 4"],
+      title: "Clarity Call",
+      subtitle: "Build unshakeable self-confidence",
+      price: "Free",
+      duration: "60-Min",
+      format: "Online or Phone",
+      description: "build unshakeable self-confidence",
+      features: [
+        "Pinpoint Your Place on the 7-Step Roadmap",
+        "Uncover Hidden Blocks",
+        "Reframe + Mindset Shift",
+        "Personalized Next Step Plan",
+      ],
       popular: false,
+      redirectLink: "https://calendly.com/diane-maxtransformationllc/60min",
     },
     {
       title: "Rewire & Rebuild Method",
@@ -25,18 +30,28 @@ export default function ProgramsClient() {
       format: "Live group coaching",
       description:
         "Deep dive into transforming your mindset with live coaching and community support.",
-      features: ["feature 1", "feature 2", "feature 3", "feature 4"],
+      features: [
+        "Establish boundaries",
+        "Recognize and honor your own value and needs",
+        "Reclaim parts of yourself you thought were lost",
+        "Step into the future with confidence not wearing a mask",
+      ],
       popular: true,
     },
     {
       title: "1-on-1 VIP Coaching",
       subtitle: "Personalized Transformation",
-      price: "$197",
+      price: "$297",
       duration: "Per session",
       format: "Private coaching",
       description:
         "Intensive, personalized coaching tailored specifically to your unique challenges and goals.",
-      features: ["feature 1", "feature 2", "feature 3", "feature 4"],
+      features: [
+        "Start Rewiring Negative Self-Talk",
+        "Unlock the Root of Your Setback",
+        "Create a Focused Next-Step Plan ",
+        "Experience Coaching with Purpose",
+      ],
       popular: false,
     },
   ];
@@ -123,7 +138,7 @@ export default function ProgramsClient() {
                     </ul>
 
                     <Link
-                      href="/contact"
+                      href={program.redirectLink || "/contact"}
                       className={`w-full py-4 px-6 rounded-full font-semibold transition-all duration-300 flex items-center justify-center ${
                         program.popular
                           ? "bg-teal text-white hover:bg-opacity-90"
@@ -217,24 +232,20 @@ export default function ProgramsClient() {
             <div className="space-y-8">
               {[
                 {
-                  question: "FAQ 1",
+                  question: "How do I know if this is for me?",
                   answer:
-                    "Book a free consultation call and we'll discuss your goals and challenges to determine the best fit for your needs.",
+                    "If you're feeling stuck, overwhelmed, emotionally drained, or unsure of your next move, this is for you. Whether you're ready to reclaim your confidence, heal from a personal loss, or simply want to reconnect with yourself, this session will help you begin that journey.",
                 },
                 {
-                  question: "FAQ 2",
+                  question:
+                    "What makes this different from traditional coaching?",
                   answer:
-                    "All programs come with a money-back guarantee. If you don't see improvement after completing the program, I'll refund your investment.",
+                    "This isn't just “talk.” The Rewire & Rebuild approach blends emotional intelligence, mindset tools, and compassionate guidance to help you experience real transformation, not surface level motivation. You'll leave with clarity and a next step, not confusion or overwhelm.",
                 },
                 {
-                  question: "FAQ 3",
+                  question: "What is the 60-Min Clarity Call?",
                   answer:
-                    "The Confidence Builder requires 15-20 minutes daily. Mindset Mastery includes weekly 90-minute calls plus daily practice. 1-on-1 coaching is flexible based on your schedule.",
-                },
-                {
-                  question: "FAQ 4",
-                  answer:
-                    "Yes! I offer 3-month payment plans for all programs. Contact me to discuss options that work for your budget.",
+                    "The 60-Min Clarity Call is a powerful, judgment free coaching session using the Rewire & Rebuild Method™. It's designed to help you identify where you are in your healing or transformation journey, uncover hidden blocks, shift your mindset, and walk away with a personalized next step plan. It's more than just a conversation, it's a moment of clarity and momentum.",
                 },
               ].map((faq, index) => (
                 <div

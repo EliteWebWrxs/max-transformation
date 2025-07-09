@@ -109,10 +109,10 @@ export default function ContactClient() {
     {
       icon: Calendar,
       title: "Book a Free Call",
-      description: "30-minute consultation to discuss your goals",
+      description: "60-minute consultation to discuss your goals",
       action: "Schedule Now",
       highlight: true,
-      actionLink: "https://calendly.com/diane-maxtransformationllc/30min",
+      actionLink: "https://calendly.com/diane-maxtransformationllc/60min",
     },
     {
       icon: Mail,
@@ -450,7 +450,7 @@ export default function ContactClient() {
                   Ready to Get Started?
                 </h3>
                 <p className="mb-6 text-gray-200">
-                  Book your free 30-minute consultation and let's create your
+                  Book your free 60-minute consultation and let's create your
                   transformation roadmap together.
                 </p>
                 <div className="space-y-3 mb-6">
@@ -468,7 +468,7 @@ export default function ContactClient() {
                   </div>
                 </div>
                 <Link
-                  href="https://calendly.com/diane-maxtransformationllc/30min"
+                  href="https://calendly.com/diane-maxtransformationllc/60min"
                   className="bg-sand text-charcoal px-8 py-4 rounded-full font-bold hover:bg-gold transition-all duration-300"
                 >
                   Book Your Free Call Now
