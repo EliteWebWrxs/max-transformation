@@ -37,6 +37,8 @@ export default function ProgramsClient() {
         "Step into the future with confidence not wearing a mask",
       ],
       popular: true,
+      redirectLink:
+        "https://calendly.com/diane-maxtransformationllc/rebuild-and-rewire",
     },
     {
       title: "1-on-1 VIP Coaching",
@@ -53,6 +55,8 @@ export default function ProgramsClient() {
         "Experience Coaching with Purpose",
       ],
       popular: false,
+      redirectLink:
+        "https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching",
     },
   ];
 
