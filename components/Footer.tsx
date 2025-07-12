@@ -206,7 +206,7 @@ export default function Footer() {
               </div>
 
               {/* Social Links */}
-              <div className="flex space-x-4">
+              {/* <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <Link
                     key={index}
@@ -222,7 +222,7 @@ export default function Footer() {
                     />
                   </Link>
                 ))}
-              </div>
+              </div> */}
             </div>
 
             {/* Quick Links */}
