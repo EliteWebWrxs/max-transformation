@@ -1,5 +1,7 @@
 import BooksClient from "./bookClient";
 import type { Metadata, ResolvingMetadata } from "next";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import { booksAndResources } from "@/sanity/lib/queries";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -26,6 +28,8 @@ export async function generateMetadata(
   };
 }
 
-export default function Books() {
-  return <BooksClient />;
+export default async function Books() {
+  const data = await sanityFetch({ query: booksAndResources });
+  console.log("🚀 ~ Books ~ data:", data);
+  return <BooksClient data={data} />;
 }

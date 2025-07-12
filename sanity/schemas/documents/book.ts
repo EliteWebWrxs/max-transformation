@@ -47,15 +47,15 @@ export default defineType({
       type: "number",
     }),
     defineField({
-      name: "features",
-      title: "Features",
-      type: "array",
-      of: [{ type: "string" }],
-    }),
-    defineField({
       name: "redirectLink",
       title: "Redirect Link",
       type: "string",
+    }),
+    defineField({
+      name: "bookImage",
+      title: "Book Image",
+      type: "image",
+      validation: (rule) => rule.required(),
     }),
   ],
 });

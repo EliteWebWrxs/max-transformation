@@ -40,8 +40,9 @@ export const testimonials = defineQuery(`*[_type == "programTestimonial"]{
   rating
 }`);
 
-export const booksAndResources = defineQuery(`{
-  books: *[_type == "book"]{
+export const booksAndResources = defineQuery(`
+{
+  "books": *[_type == "book"]{
     title,
     subtitle,
     description,
@@ -50,18 +51,20 @@ export const booksAndResources = defineQuery(`{
     pages,
     rating,
     reviews,
-    features
+    features,
+    redirectLink,
+    "bookImageUrl": bookImage.asset->url
   },
-  resources: *[_type == "freeResource"]{
+  "resources": *[_type == "freeResource"]{
     title,
     description,
     type,
     "pdfUrl": file.asset->url
   },
-  bookTestimonial: *[_type == "bookTestimonial"]{
+  "bookTestimonial": *[_type == "bookTestimonial"]{
     name,
-    role,
     content,
     rating
   }
-}`);
+}
+`);

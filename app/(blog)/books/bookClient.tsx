@@ -5,53 +5,10 @@ import Link from "next/link";
 import { Star, Download, BookOpen, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 
-export default function BooksClient() {
-  const books = [
-    {
-      title: "Rewrite Your Story",
-      subtitle: "A Guide to Positive Self-Talk",
-      description:
-        "Transform your inner dialogue and build unshakeable confidence with proven techniques and daily practices.",
-      price: "$19.99",
-      format: "Digital & Paperback",
-      pages: "240 pages",
-      rating: 4.8,
-      reviews: 127,
-      features: ["feature 1", "feature 2", "feature 3", "feature 4"],
-    },
-    {
-      title: "The Confidence Code",
-      subtitle: "Unlock Your Inner Strength",
-      description:
-        "Discover the secrets to building lasting confidence and overcoming self-doubt in any situation.",
-      price: "$24.99",
-      format: "Digital & Paperback",
-      pages: "320 pages",
-      rating: 4.9,
-      reviews: 89,
-      features: ["feature 1", "feature 2", "feature 3", "feature 4"],
-    },
-  ];
-
-  const freeResources = [
-    {
-      title: "Resource 1",
-      description: "50 powerful affirmations to start your day with confidence",
-      type: "PDF Download",
-    },
-    {
-      title: "Resource 2",
-      description:
-        "Discover your current self-talk patterns and areas for improvement",
-      type: "Interactive Quiz",
-    },
-    {
-      title: "Resource 3",
-      description:
-        "A step-by-step guide to building confidence in any situation",
-      type: "PDF Checklist",
-    },
-  ];
+export default function BooksClient({ data }: { data: any }) {
+  const books = data.books;
+  const freeResources = data.resources;
+  const testimonials = data.bookTestimonial;
 
   return (
     <div className="pt-16">
@@ -82,7 +39,7 @@ export default function BooksClient() {
             </h2>
 
             <div className="space-y-16">
-              {books.map((book, index) => (
+              {books.map((book: any, index: number) => (
                 <div
                   key={index}
                   className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
@@ -92,7 +49,7 @@ export default function BooksClient() {
                   <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                     <div className="bg-opacity-80 backdrop-blur-sm p-4 rounded-lg">
                       <Image
-                        src="/image_2.jpg?height=400&width=300"
+                        src={book.bookImageUrl}
                         alt={book.title}
                         width={300}
                         height={400}
@@ -137,21 +94,21 @@ export default function BooksClient() {
                       </div>
                     </div>
 
-                    <ul className="space-y-2 mb-8">
+                    {/* <ul className="space-y-2 mb-8">
                       {book.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-start">
                           <div className="w-2 h-2 bg-teal rounded-full mt-2 mr-3 flex-shrink-0"></div>
                           <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
-                    </ul>
+                    </ul> */}
 
                     <div className="flex items-center justify-between">
                       <span className="text-3xl font-bold text-charcoal">
                         {book.price}
                       </span>
                       <Link
-                        href="/contact"
+                        href={book.redirectLink}
                         className="bg-teal text-white px-6 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 flex items-center"
                       >
                         Order Now
@@ -167,47 +124,49 @@ export default function BooksClient() {
       </div>
 
       {/* Free Resources */}
-      <div
-        className="py-20 bg-gray-50 relative bg-fixed bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9))`,
-        }}
-      >
-        <AnimatedSection className="relative z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-16 text-center">
-              Free Resources
-            </h2>
+      {freeResources.length > 1 && (
+        <div
+          className="py-20 bg-gray-50 relative bg-fixed bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `linear-gradient(rgba(249, 250, 251, 0.9), rgba(249, 250, 251, 0.9))`,
+          }}
+        >
+          <AnimatedSection className="relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-3xl lg:text-5xl font-bold text-charcoal mb-16 text-center">
+                Free Resources
+              </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {freeResources.map((resource, index) => (
-                <div
-                  key={index}
-                  className="bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center border border-white border-opacity-50"
-                >
-                  <div className="bg-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Download size={32} />
-                  </div>
-                  <h3 className="text-xl font-bold text-charcoal mb-4">
-                    {resource.title}
-                  </h3>
-                  <p className="text-gray-700 mb-4">{resource.description}</p>
-                  <p className="text-sm text-teal font-semibold mb-6">
-                    {resource.type}
-                  </p>
-                  <Link
-                    href="/contact"
-                    className="bg-sand text-charcoal px-6 py-3 rounded-full hover:bg-gold transition-all duration-300 inline-flex items-center"
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {freeResources.map((resource: any, index: number) => (
+                  <div
+                    key={index}
+                    className="bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-lg shadow-lg text-center border border-white border-opacity-50"
                   >
-                    Download Free
-                    <Download className="ml-2" size={16} />
-                  </Link>
-                </div>
-              ))}
+                    <div className="bg-teal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Download size={32} />
+                    </div>
+                    <h3 className="text-xl font-bold text-charcoal mb-4">
+                      {resource.title}
+                    </h3>
+                    <p className="text-gray-700 mb-4">{resource.description}</p>
+                    <p className="text-sm text-teal font-semibold mb-6">
+                      {resource.type}
+                    </p>
+                    <Link
+                      href={resource.pdfUrl}
+                      className="bg-sand text-charcoal px-6 py-3 rounded-full hover:bg-gold transition-all duration-300 inline-flex items-center"
+                    >
+                      Download Free
+                      <Download className="ml-2" size={16} />
+                    </Link>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        </AnimatedSection>
-      </div>
+          </AnimatedSection>
+        </div>
+      )}
 
       {/* Testimonials */}
       <div
@@ -223,26 +182,7 @@ export default function BooksClient() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Amanda K.",
-                  review:
-                    "This book changed my life! The exercises are practical and the writing is so relatable. I finally understand how to be kind to myself.",
-                  rating: 5,
-                },
-                {
-                  name: "Robert T.",
-                  review:
-                    "As someone who struggled with confidence for years, this book gave me the tools I needed. The daily practices really work!",
-                  rating: 5,
-                },
-                {
-                  name: "Maria S.",
-                  review:
-                    "I've read many self-help books, but this one stands out. It's not just theory - it's actionable advice that gets results.",
-                  rating: 5,
-                },
-              ].map((testimonial, index) => (
+              {testimonials.map((testimonial: any, index: number) => (
                 <div
                   key={index}
                   className="bg-white bg-opacity-95 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-white border-opacity-50"
@@ -257,7 +197,7 @@ export default function BooksClient() {
                     ))}
                   </div>
                   <p className="text-gray-700 mb-4 italic">
-                    "{testimonial.review}"
+                    "{testimonial.content}"
                   </p>
                   <div className="font-semibold text-charcoal">
                     {testimonial.name}
