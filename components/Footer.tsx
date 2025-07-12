@@ -294,7 +294,7 @@ export default function Footer() {
                   Book your free consultation today
                 </p>
                 <Link
-                  href="https://calendly.com/d/cwr3-k62-fz6"
+                  href="https://calendly.com/diane-maxtransformationllc/60min"
                   className="bg-white text-charcoal px-4 py-2 rounded-full text-sm font-semibold hover:bg-sand transition-all duration-300 inline-flex items-center"
                 >
                   Get Started
