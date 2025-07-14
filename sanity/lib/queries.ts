@@ -44,7 +44,6 @@ export const booksAndResources = defineQuery(`
 {
   "books": *[_type == "book"]{
     title,
-    subtitle,
     description,
     price,
     format,

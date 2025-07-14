@@ -64,7 +64,7 @@ export default function BooksClient({ data }: { data: any }) {
                     <h3 className="text-3xl font-bold text-charcoal mb-2">
                       {book.title}
                     </h3>
-                    <p className="text-xl text-teal mb-4">{book.subtitle}</p>
+                    {/* <p className="text-xl text-teal mb-4">{book.subtitle}</p> */}
 
                     <div className="flex items-center mb-4">
                       <div className="flex">
