@@ -49,6 +49,7 @@ export default function Footer() {
     { href: "/programs", label: "Programs" },
     { href: "/books", label: "Books" },
     { href: "/contact", label: "Contact" },
+    { href: "/posts", label: "Blog" },
   ];
 
   const programs = [
@@ -197,7 +198,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Phone size={20} className="mr-4 text-teal" />
-                  <span>(614) 438-2532</span>
+                  <span>(614) 323-1581</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <MapPin size={20} className="mr-4 text-teal" />

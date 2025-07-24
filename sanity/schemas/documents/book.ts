@@ -10,11 +10,12 @@ export default defineType({
       title: "Title",
       type: "string",
     }),
-    // defineField({
-    //   name: "subtitle",
-    //   title: "Subtitle",
-    //   type: "string",
-    // }),
+    defineField({
+      name: "order",
+      title: "Display Order",
+      type: "number",
+      validation: (rule) => rule.required().integer().min(1),
+    }),
     defineField({
       name: "description",
       title: "Description",

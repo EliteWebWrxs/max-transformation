@@ -42,8 +42,9 @@ export const testimonials = defineQuery(`*[_type == "programTestimonial"]{
 
 export const booksAndResources = defineQuery(`
 {
-  "books": *[_type == "book"]{
+  "books": *[_type == "book"] | order(order asc) {
     title,
+    order,
     description,
     price,
     format,
@@ -54,13 +55,13 @@ export const booksAndResources = defineQuery(`
     redirectLink,
     "bookImageUrl": bookImage.asset->url
   },
-  "resources": *[_type == "freeResource"]{
+  "resources": *[_type == "freeResource"] | order(title asc) {
     title,
     description,
     type,
     "pdfUrl": file.asset->url
   },
-  "bookTestimonial": *[_type == "bookTestimonial"]{
+  "bookTestimonial": *[_type == "bookTestimonial"] | order(_createdAt desc) {
     name,
     content,
     rating
