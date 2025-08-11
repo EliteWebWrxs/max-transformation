@@ -38,26 +38,26 @@ export default function Home() {
                   href="/contact"
                   className="group bg-gradient-to-r from-teal to-charcoal text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center"
                 >
-                  Book Free Consultation
+                  Receive Your Complimentary Clarity Call
                   <ArrowRight
                     className="ml-3 group-hover:translate-x-1 transition-transform"
                     size={24}
                   />
                 </Link>
-                <Link
+                {/* <Link
                   href="/programs"
                   className="border-2 border-sand text-sand px-10 py-5 rounded-full font-bold text-lg hover:bg-sand hover:text-charcoal transition-all duration-300"
                 >
                   View Programs
-                </Link>
+                </Link> */}
               </div>
 
-              <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
+              {/* <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
                 <div className="flex items-center">
                   <div className="w-2 h-2 bg-teal rounded-full mr-2"></div>
                   Free 60-min call
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -183,19 +183,19 @@ export default function Home() {
                   title: "Clarity Call",
                   description:
                     "Build unshakeable self-confidence in a free initial call",
-                  price: "Free",
+                  price: "",
                 },
                 {
                   title: "Renew and Rebuild",
                   description:
                     "8-week deep dive into transforming your mindset",
-                  price: "$597",
+                  price: "",
                 },
                 {
                   title: "1-on-1 Coaching",
                   description:
                     "Personalized coaching tailored to your specific needs",
-                  price: "$297/session",
+                  price: "",
                 },
               ].map((program, index) => (
                 <div
@@ -289,7 +289,7 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div
+      {/* <div
         className="py-20 bg-gradient-to-r from-teal to-charcoal text-white relative bg-fixed bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(20, 184, 166, 0.8), rgba(45, 55, 72, 0.8))`,
@@ -321,7 +321,7 @@ export default function Home() {
             </div>
           </div>
         </AnimatedSection>
-      </div>
+      </div> */}
     </div>
   );
 }

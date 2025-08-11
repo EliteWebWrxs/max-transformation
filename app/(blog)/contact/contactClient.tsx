@@ -108,11 +108,12 @@ export default function ContactClient() {
   const contactMethods = [
     {
       icon: Calendar,
-      title: "Book a Free Call",
+      title: "Complimentary Clarity Call",
       description: "60-minute consultation to discuss your goals",
       action: "Schedule Now",
       highlight: true,
-      actionLink: "https://calendly.com/diane-maxtransformationllc/60min",
+      actionLink:
+        "https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching",
     },
     {
       icon: Mail,
@@ -130,7 +131,7 @@ export default function ContactClient() {
       action: "Call Now",
       highlight: false,
       type: "phone",
-      actionLink: "6143231581",
+      actionLink: "6562421989",
     },
   ];
 
@@ -402,7 +403,7 @@ export default function ContactClient() {
                       <h4 className="font-semibold text-charcoal mb-1">
                         Call Me
                       </h4>
-                      <p className="text-gray-700 mb-1">(614) 438-2532</p>
+                      <p className="text-gray-700 mb-1">(656) 242-1989</p>
                       <p className="text-sm text-gray-500">
                         Available for consultation calls
                       </p>
@@ -468,7 +469,7 @@ export default function ContactClient() {
                   </div>
                 </div>
                 <Link
-                  href="https://calendly.com/diane-maxtransformationllc/60min"
+                  href="https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching"
                   className="bg-sand text-charcoal px-8 py-4 rounded-full font-bold hover:bg-gold transition-all duration-300"
                 >
                   Book Your Free Call Now
@@ -480,7 +481,7 @@ export default function ContactClient() {
       </AnimatedSection>
 
       {/* Final CTA */}
-      <AnimatedSection className="py-20 bg-gradient-to-br from-sand via-gold to-sand">
+      {/* <AnimatedSection className="py-20 bg-gradient-to-br from-sand via-gold to-sand">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl lg:text-5xl font-bold text-charcoal mb-6">
             Your New Chapter Starts Today
@@ -499,7 +500,7 @@ export default function ContactClient() {
             </Link>
           </div>
         </div>
-      </AnimatedSection>
+      </AnimatedSection> */}
     </div>
   );
 }

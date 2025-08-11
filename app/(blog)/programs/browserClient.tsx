@@ -20,7 +20,8 @@ export default function ProgramsClient() {
         "Personalized Next Step Plan",
       ],
       popular: false,
-      redirectLink: "https://calendly.com/diane-maxtransformationllc/60min",
+      redirectLink:
+        "https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching",
     },
     {
       title: "Rewire & Rebuild Method",

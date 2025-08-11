@@ -126,7 +126,7 @@ export default function Navigation() {
 
             {/* CTA Button */}
             <Link
-              href="https://calendly.com/diane-maxtransformationllc/60min"
+              href="https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching"
               className="nav-item ml-4 bg-gradient-to-r from-teal to-charcoal text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-200"
             >
               Get Started
@@ -195,7 +195,7 @@ export default function Navigation() {
             {/* Mobile CTA */}
             <div className="pt-4 border-t border-gray-200">
               <Link
-                href="https://calendly.com/diane-maxtransformationllc/60min"
+                href="https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching"
                 className="block w-full bg-gradient-to-r from-teal to-charcoal text-white text-center px-6 py-4 rounded-full font-semibold hover:shadow-lg transition-all duration-200"
                 onClick={() => setIsOpen(false)}
               >

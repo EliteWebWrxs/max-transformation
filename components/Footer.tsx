@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   Mail,
@@ -15,7 +15,7 @@ import {
   Send,
 } from "lucide-react";
 import Image from "next/image";
-import { gsap } from "gsap";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -66,6 +66,9 @@ export default function Footer() {
     { href: "/contact", label: "Success Stories" },
   ];
 
+  const pathname = usePathname();
+  console.log("🚀 ~ pathname:", pathname);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -114,58 +117,61 @@ export default function Footer() {
 
       <div className="relative z-10">
         {/* Newsletter Section */}
-        <div className="footer-animate border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="text-center max-w-2xl mx-auto">
-              <h3 className="text-3xl font-bold mb-4">
-                Transform Your Mindset Weekly
-              </h3>
-              <p className="text-gray-300 mb-8">
-                Get exclusive tips, exercises, and inspiration delivered to your
-                inbox every week. Join 10,000+ people already transforming their
-                lives.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                {submitted ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Send className="h-8 w-8 text-green-600" />
+
+        {pathname !== "/contact" && (
+          <div className="footer-animate border-b border-white/10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+              <div className="text-center max-w-2xl mx-auto">
+                <h3 className="text-3xl font-bold mb-4">
+                  Transform Your Mindset Weekly
+                </h3>
+                <p className="text-gray-300 mb-8">
+                  Get exclusive tips, exercises, and inspiration delivered to
+                  your inbox every week. Join 10,000+ people already
+                  transforming their lives.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  {submitted ? (
+                    <div className="text-center py-12">
+                      <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Send className="h-8 w-8 text-green-600" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        Message Sent!
+                      </h3>
+                      <p className="text-white">{submittedMessage}</p>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Message Sent!
-                    </h3>
-                    <p className="text-white">{submittedMessage}</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit}>
-                    <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        className="flex-1 px-6 py-4 rounded-full text-charcoal placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                      />
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="bg-gradient-to-r from-teal to-charcoal px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
-                      >
-                        {isSubmitting ? "Subscribing..." : "Subscribe"}
-                        <ArrowRight className="ml-2" size={20} />
-                      </button>
-                    </div>
-                  </form>
-                )}
+                  ) : (
+                    <form onSubmit={handleSubmit}>
+                      <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Enter your email"
+                          className="flex-1 px-6 py-4 rounded-full text-charcoal placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-teal"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                        />
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="bg-gradient-to-r from-teal to-charcoal px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                        >
+                          {isSubmitting ? "Subscribing..." : "Subscribe"}
+                          <ArrowRight className="ml-2" size={20} />
+                        </button>
+                      </div>
+                    </form>
+                  )}
+                </div>
+                <p className="text-sm text-gray-400 mt-4">
+                  No spam. Unsubscribe anytime.
+                </p>
               </div>
-              <p className="text-sm text-gray-400 mt-4">
-                No spam. Unsubscribe anytime.
-              </p>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Main Footer Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -198,7 +204,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center text-gray-300">
                   <Phone size={20} className="mr-4 text-teal" />
-                  <span>(614) 323-1581</span>
+                  <span>(656) 242-1989</span>
                 </div>
                 <div className="flex items-center text-gray-300">
                   <MapPin size={20} className="mr-4 text-teal" />
@@ -295,7 +301,7 @@ export default function Footer() {
                   Book your free consultation today
                 </p>
                 <Link
-                  href="https://calendly.com/diane-maxtransformationllc/60min"
+                  href="https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching"
                   className="bg-white text-charcoal px-4 py-2 rounded-full text-sm font-semibold hover:bg-sand transition-all duration-300 inline-flex items-center"
                 >
                   Get Started
