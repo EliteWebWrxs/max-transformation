@@ -7,26 +7,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 export default function ProgramsClient() {
   const programs = [
     {
-      title: "Clarity Call",
-      subtitle: "Build unshakeable self-confidence",
-      price: "Free",
-      duration: "60-Min",
-      format: "Online or Phone",
-      description: "build unshakeable self-confidence",
-      features: [
-        "Pinpoint Your Place on the 7-Step Roadmap",
-        "Uncover Hidden Blocks",
-        "Reframe + Mindset Shift",
-        "Personalized Next Step Plan",
-      ],
-      popular: false,
-      redirectLink:
-        "https://calendly.com/diane-maxtransformationllc/1-on-1-vip-coaching",
-    },
-    {
       title: "Rewire & Rebuild Method",
       subtitle: "8-Week Transformation Program",
-      price: "$597",
       duration: "8 weeks",
       format: "Live group coaching",
       description:
@@ -42,18 +24,16 @@ export default function ProgramsClient() {
         "https://calendly.com/diane-maxtransformationllc/rebuild-and-rewire",
     },
     {
-      title: "1-on-1 VIP Coaching",
-      subtitle: "Personalized Transformation",
-      price: "$297",
-      duration: "Per session",
-      format: "Private coaching",
-      description:
-        "Intensive, personalized coaching tailored specifically to your unique challenges and goals.",
+      title: "Clarity Call",
+      subtitle: "Build unshakeable self-confidence",
+      duration: "60-Min",
+      format: "Online or Phone",
+      description: "build unshakeable self-confidence",
       features: [
-        "Start Rewiring Negative Self-Talk",
-        "Unlock the Root of Your Setback",
-        "Create a Focused Next-Step Plan ",
-        "Experience Coaching with Purpose",
+        "Pinpoint Your Place on the 7-Step Roadmap",
+        "Uncover Hidden Blocks",
+        "Reframe + Mindset Shift",
+        "Personalized Next Step Plan",
       ],
       popular: false,
       redirectLink:
@@ -85,14 +65,14 @@ export default function ProgramsClient() {
       >
         <AnimatedSection className="relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {programs.map((program, index) => (
                 <div
                   key={index}
                   className={`relative bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden border border-white border-opacity-50 ${
                     program.popular
                       ? "ring-4 ring-teal transform scale-105"
-                      : ""
+                      : "ring-2 ring-teal transform "
                   }`}
                 >
                   {program.popular && (
@@ -107,7 +87,7 @@ export default function ProgramsClient() {
                     </h3>
                     <p className="text-gray-600 mb-4">{program.subtitle}</p>
 
-                    <div className="mb-6">
+                    {/* <div className="mb-6">
                       <span className="text-4xl font-bold text-charcoal">
                         {program.price}
                       </span>
@@ -115,7 +95,7 @@ export default function ProgramsClient() {
                         program.title !== "Clarity Call" && (
                           <span className="text-gray-600">/program</span>
                         )}
-                    </div>
+                    </div> */}
 
                     <div className="flex items-center text-sm text-gray-600 mb-2">
                       <Clock size={16} className="mr-2" />
@@ -224,6 +204,7 @@ export default function ProgramsClient() {
 
       {/* FAQ */}
       <div
+        id="faq"
         className="py-20 relative bg-fixed bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('/REWIRE-AND-REBUILD-LOGO.png?height=1000&width=1920')`,

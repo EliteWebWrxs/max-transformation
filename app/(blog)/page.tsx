@@ -177,7 +177,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
               {[
                 {
                   title: "Clarity Call",
@@ -191,16 +191,10 @@ export default function Home() {
                     "8-week deep dive into transforming your mindset",
                   price: "",
                 },
-                {
-                  title: "1-on-1 Coaching",
-                  description:
-                    "Personalized coaching tailored to your specific needs",
-                  price: "",
-                },
               ].map((program, index) => (
                 <div
                   key={index}
-                  className="bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm border border-white border-opacity-20"
+                  className="bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm border border-white border-opacity-20 text-center w-100"
                 >
                   <h3 className="text-2xl font-bold mb-4 text-sand">
                     {program.title}

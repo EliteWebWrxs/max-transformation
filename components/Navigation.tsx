@@ -39,7 +39,7 @@ export default function Navigation() {
         { href: "/programs", label: "All Programs" },
         { href: "/programs#confidence-builder", label: "Confidence Builder" },
         { href: "/programs#mindset-mastery", label: "Rewire & Rebuild" },
-        { href: "/programs#vip-coaching", label: "1-on-1 Coaching" },
+        { href: "/programs#faq", label: "FAQ" },
       ],
     },
     { href: "/books", label: "Books" },

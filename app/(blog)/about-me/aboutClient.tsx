@@ -86,12 +86,12 @@ export default function AboutClient() {
                   Let's Connect
                   <ArrowRight className="ml-2" size={20} />
                 </Link>
-                <Link
+                {/* <Link
                   href="/programs"
                   className="border-2 border-charcoal text-charcoal px-8 py-4 rounded-full font-semibold hover:bg-charcoal hover:text-white transition-all duration-300 text-center"
                 >
                   See How I Can Help
-                </Link>
+                </Link> */}
               </div>
 
               {/* Stats */}

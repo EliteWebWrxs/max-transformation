@@ -445,8 +445,7 @@ export default function ContactClient() {
                 </div>
               </div>
 
-              {/* Free Consultation CTA */}
-              <div className="bg-gradient-to-r from-teal to-charcoal p-8 rounded-2xl text-white text-center">
+              {/* <div className="bg-gradient-to-r from-teal to-charcoal p-8 rounded-2xl text-white text-center">
                 <h3 className="text-2xl font-bold mb-4">
                   Ready to Get Started?
                 </h3>
@@ -474,7 +473,7 @@ export default function ContactClient() {
                 >
                   Book Your Free Call Now
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
